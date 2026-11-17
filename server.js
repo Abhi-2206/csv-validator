@@ -34,7 +34,7 @@ const upload = multer({
   }
 });
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "dist")));
 
 function isEmptyCell(value) {
   return value === undefined || value === null || String(value).trim() === "";
