@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSV Check – CSV Validator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <p class="eyebrow">CSV Check</p>
+        <h1>CSV Validator</h1>
+        <p class="description">
+          Upload a CSV file to parse it, detect data issues, and preview the first records.
+        </p>
+      </header>
+
+      <section class="card upload-card">
+        <h2>Analyze a CSV file</h2>
+        <form id="uploadForm">
+          <label for="csvFile">CSV file</label>
+          <input
+            id="csvFile"
+            name="csvFile"
+            type="file"
+            accept=".csv,text/csv"
+            required
+          />
+          <div class="actions">
+            <button id="analyzeButton" type="submit">Analyze CSV</button>
+            <span id="selectedFile" class="selected-file"></span>
+          </div>
+        </form>
+        <div id="message" class="message" role="alert" hidden></div>
+      </section>
+
+      <section id="results" class="results" hidden>
+        <h2>Validation summary</h2>
+        <div class="summary-grid">
+          <article class="summary-card">
+            <span>Total rows</span>
+            <strong id="totalRows">0</strong>
+          </article>
+          <article class="summary-card">
+            <span>Total columns</span>
+            <strong id="totalColumns">0</strong>
+          </article>
+          <article class="summary-card">
+            <span>Empty cells</span>
+            <strong id="emptyCells">0</strong>
+          </article>
+          <article class="summary-card">
+            <span>Duplicate rows</span>
+            <strong id="duplicateRows">0</strong>
+          </article>
+          <article class="summary-card">
+            <span>Inconsistent rows</span>
+            <strong id="inconsistentRows">0</strong>
+          </article>
+          <article id="statusCard" class="summary-card status-card">
+            <span>Status</span>
+            <strong id="statusText">Valid</strong>
+          </article>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-heading">
+            <h2>CSV preview</h2>
+            <p id="previewNote"></p>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead id="previewHead"></thead>
+              <tbody id="previewBody"></tbody>
+            </table>
+            <p id="emptyPreview" class="empty-preview" hidden>
+              This CSV does not contain any data rows to preview.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

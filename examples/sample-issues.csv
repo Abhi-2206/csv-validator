@@ -1,0 +1,6 @@
+id,name,email,department,joining_date
+1,Aarav Sharma,aarav@example.com,Engineering,2024-01-15
+2,,design@example.com,Design,2024-02-01
+3,Rohan Mehta,,Engineering,2024-03-10
+1,Aarav Sharma,aarav@example.com,Engineering,2024-01-15
+4,Extra Columns,extra@example.com,Sales,2024-04-01,unexpected
